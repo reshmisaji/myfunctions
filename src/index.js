@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import styled from 'styled-components';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const theme = {
+  width: '100px',
+  height: '100px',
+  border: '1px solid black',
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const LoginBox = styled.div`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  border: ${(props) => props.border || 'none'};
+`;
+
+const Login = ({ theme }) => {
+  return <LoginBox {...theme} />;
+};
+
+ReactDOM.render(<Login theme={theme} />, document.getElementById('root'));
+export default Login;
