@@ -10,3 +10,9 @@ export const isOdd = (number) => {
 export const isEven = (number) => {
   return number%2===0;
 }
+
+export const sum = (num1,num2)=>num1+num2;
+
+export const sumOfArray = (array)=>{
+  return array.reduce(sum,0);
+}
